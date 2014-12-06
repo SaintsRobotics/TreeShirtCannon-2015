@@ -19,7 +19,7 @@ public class PneumaticSubsystem extends Subsystem {
      * @param val true for open, false for closed
      */
     public void setTankValve(boolean val) {
-        tankValve.set(val^RobotMap.TANK_INVERTED ? Relay.Value.kOn : Relay.Value.kOff);
+        tankValve.set(invert(val, RobotMap.TANK_INVERTED) ? Relay.Value.kOn : Relay.Value.kOff);
     }
     
     /**
@@ -28,7 +28,7 @@ public class PneumaticSubsystem extends Subsystem {
      * @param val true for open, false for closed
      */
     public void setFiringValve(boolean val) {
-        firingValve.set(val^RobotMap.FIRING_INVERTED ? Relay.Value.kOn : Relay.Value.kOff);
+        firingValve.set(invert(val, RobotMap.FIRING_INVERTED) ? Relay.Value.kOn : Relay.Value.kOff);
     }
     
     /**
@@ -38,7 +38,8 @@ public class PneumaticSubsystem extends Subsystem {
      * (or backwards in bidirectional mode).
      */
     public boolean getTankValve() {
-        return firingValve.get().equals(Relay.Value.kOn) || firingValve.get().equals(Relay.Value.kForward);
+        return firingValve.get().equals(Relay.Value.kOn)||
+               firingValve.get().equals(Relay.Value.kForward);
     }
     
     /**
@@ -48,7 +49,8 @@ public class PneumaticSubsystem extends Subsystem {
      * (or backwards in bidirectional mode).
      */
     public boolean getFiringValve() {
-        return firingValve.get().equals(Relay.Value.kOn) || firingValve.get().equals(Relay.Value.kForward);
+        return firingValve.get().equals(Relay.Value.kOn) ||
+               firingValve.get().equals(Relay.Value.kForward);
     }
     
     /**
@@ -57,6 +59,17 @@ public class PneumaticSubsystem extends Subsystem {
      * @return true if pressure is high, false if pressure is low
      */
     public boolean getPressureSwitch() {
-        return pressureSwitch.get() ^ RobotMap.PRESSURE_SWITCH_INVERTED;
+        return invert(pressureSwitch.get(), RobotMap.PRESSURE_SWITCH_INVERTED);
+    }
+    
+    /**
+     * Invert a value if it's supposed to be.
+     * 
+     * @param val the original value
+     * @param inv whether or not to invert
+     * @return {@code val} inverted if it's supposed to be
+     */
+    private boolean invert(boolean val, boolean inv) {
+        return val ^ inv;
     }
 }
