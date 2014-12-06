@@ -16,6 +16,10 @@ public class PneumaticSubsystem extends Subsystem {
         
     }
     
+    public void setValve(boolean val) {
+        
+    }
+    
     /**
      * Gets the value of the pressure switch.
      * 
