@@ -1,9 +1,11 @@
 package com.saintsrobotics.tshirt.commands;
+
 import edu.wpi.first.wpilibj.Timer;
-//* @author Precociouslydigital
+
 public class FireCannonCommand extends CommandBase {
     private Timer timer;
     private double waittime;
+    
     public FireCannonCommand(double waittime) {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
