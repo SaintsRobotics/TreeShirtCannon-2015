@@ -1,6 +1,9 @@
 package com.saintsrobotics.tshirt;
 
+import com.saintsrobotics.tshirt.commands.FireCannonCommand;
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.buttons.Button;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -20,10 +23,13 @@ public class OI {
     private final Joystick xbox;
     
     
+    
+    private static final double relayWaitTime = 500;
+    
     public OI() {
         xbox = new Joystick(JOYSTICK_PORT);
-        //Button a = new JoystickButton(xbox, BUTTON_A);
-        //a.whenPressed(new GodCommand());
+        Button a = new JoystickButton(xbox, BUTTON_A);
+        a.whenPressed(new FireCannonCommand(relayWaitTime));
     }
     
     public double getAxis(int axis) {
