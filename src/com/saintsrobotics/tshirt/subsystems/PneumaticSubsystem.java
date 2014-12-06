@@ -12,11 +12,39 @@ public class PneumaticSubsystem extends Subsystem {
     
     protected void initDefaultCommand() { }
     
+    /**
+     * Turns the compressor on or off.
+     * 
+     * @param val true for on, false for off
+     */
     public void setCompressor(boolean val) {
         
     }
     
-    public void setValve(boolean val) {
+    /**
+     * Opens or closes the valve connected to the main firing tank.
+     * 
+     * @param val true for open, false for closed
+     */
+    public void setMainValve(boolean val) {
+        
+    }
+    
+    /**
+     * Opens or closes the valve connected to the auxiliary tank.
+     * 
+     * @param val true for open, false for closed
+     */
+    public void setAuxiliaryValve(boolean val) {
+        
+    }
+    
+    /**
+     * Opens or closes the valve connected to the firing tube.
+     * 
+     * @param val true for open, false for closed
+     */
+    public void setFiringValve(boolean val) {
         
     }
     
