@@ -8,35 +8,18 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 public class PneumaticSubsystem extends Subsystem {
     
     DigitalInput pressureSwitch = new DigitalInput(RobotMap.PRESSURE_SWITCH);
-    Relay compressorSpike = new Relay(RobotMap.COMPRESSOR_RELAY, RobotMap.COMPRESSOR_DIRECTION);
+    Relay firingValve = new Relay(RobotMap.FIRING_RELAY, RobotMap.FIRING_DIRECTION);
+    Relay tankValve = new Relay(RobotMap.TANK_RELAY, RobotMap.TANK_DIRECTION);
     
     protected void initDefaultCommand() { }
-    
+
     /**
-     * Turns the compressor on or off.
-     * 
-     * @param val true for on, false for off
-     */
-    public void setCompressor(boolean val) {
-        
-    }
-    
-    /**
-     * Opens or closes the valve connected to the main firing tank.
+     * Opens or closes the valve connected to the air tanks.
      * 
      * @param val true for open, false for closed
      */
-    public void setMainValve(boolean val) {
-        
-    }
-    
-    /**
-     * Opens or closes the valve connected to the auxiliary tank.
-     * 
-     * @param val true for open, false for closed
-     */
-    public void setAuxiliaryValve(boolean val) {
-        
+    public void setTankValve(boolean val) {
+        tankValve.set(val^RobotMap.TANK_INVERTED ? Relay.Value.kOn : Relay.Value.kOff);
     }
     
     /**
@@ -45,7 +28,27 @@ public class PneumaticSubsystem extends Subsystem {
      * @param val true for open, false for closed
      */
     public void setFiringValve(boolean val) {
-        
+        firingValve.set(val^RobotMap.FIRING_INVERTED ? Relay.Value.kOn : Relay.Value.kOff);
+    }
+    
+    /**
+     * Gets the current setting of the tank valve.
+     * 
+     * @return true if on (or forward in bidirectional mode), false if off
+     * (or backwards in bidirectional mode).
+     */
+    public boolean getTankValve() {
+        return firingValve.get().equals(Relay.Value.kOn) || firingValve.get().equals(Relay.Value.kForward);
+    }
+    
+    /**
+     * Gets the current setting of the firing valve.
+     * 
+     * @return true if on (or forward in bidirectional mode), false if off
+     * (or backwards in bidirectional mode).
+     */
+    public boolean getFiringValve() {
+        return firingValve.get().equals(Relay.Value.kOn) || firingValve.get().equals(Relay.Value.kForward);
     }
     
     /**
@@ -55,15 +58,5 @@ public class PneumaticSubsystem extends Subsystem {
      */
     public boolean getPressureSwitch() {
         return pressureSwitch.get() ^ RobotMap.PRESSURE_SWITCH_INVERTED;
-    }
-    
-    /**
-     * Gets the current setting of the Relay.
-     * 
-     * @return true if on (or forward in bidirectional mode), false if off
-     * (or backwards in bidirectional mode).
-     */
-    public boolean getCompressor() {
-        return compressorSpike.get().equals(Relay.Value.kOn) || compressorSpike.get().equals(Relay.Value.kForward);
     }
 }
