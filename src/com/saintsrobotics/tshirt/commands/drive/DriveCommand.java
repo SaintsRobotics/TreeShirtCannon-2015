@@ -1,6 +1,7 @@
-package com.saintsrobotics.tshirt.commands;
+package com.saintsrobotics.tshirt.commands.drive;
 
 import com.saintsrobotics.tshirt.OI;
+import com.saintsrobotics.tshirt.commands.CommandBase;
 
 public class DriveCommand extends CommandBase {
 
