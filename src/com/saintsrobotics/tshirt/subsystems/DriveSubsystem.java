@@ -1,6 +1,7 @@
 
 package com.saintsrobotics.tshirt.subsystems;
 
+import com.saintsrobotics.tshirt.commands.drive.DriveCommand;
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
@@ -10,8 +11,7 @@ public class DriveSubsystem extends Subsystem {
     SpeedController right;
     
     public void initDefaultCommand() {
-        // Set the default command for a subsystem here.
-        //setDefaultCommand(new MySpecialCommand());
+        setDefaultCommand(new DriveCommand());
     }
     
     public void setTankDrive(double l, double r) {

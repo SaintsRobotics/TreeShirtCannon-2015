@@ -1,6 +1,8 @@
 package com.saintsrobotics.tshirt;
 
-import com.saintsrobotics.tshirt.commands.FiringCommandGroup;
+import com.saintsrobotics.tshirt.commands.firing.FireAndReloadCommand;
+import com.saintsrobotics.tshirt.commands.firing.FireCommand;
+import com.saintsrobotics.tshirt.commands.firing.ReloadCommand;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
@@ -22,14 +24,14 @@ public class OI {
     
     private final Joystick xbox;
     
-    
-    
-    private static final double relayWaitTime = 500;
-    
     public OI() {
         xbox = new Joystick(JOYSTICK_PORT);
         Button a = new JoystickButton(xbox, BUTTON_A);
-        a.whenPressed(new FiringCommandGroup());
+        Button b = new JoystickButton(xbox, BUTTON_A);
+        Button x = new JoystickButton(xbox, BUTTON_A);
+        a.whenPressed(new FireAndReloadCommand());
+        b.whenPressed(new FireCommand());
+        x.whenPressed(new ReloadCommand());
     }
     
     public double getAxis(int axis) {
