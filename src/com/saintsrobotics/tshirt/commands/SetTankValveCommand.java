@@ -1,7 +1,9 @@
 package com.saintsrobotics.tshirt.commands;
 
 import edu.wpi.first.wpilibj.Timer;
-
+/**
+ * SetTankValveCommand sets the tank valve then gives it a bit of time to finish opening/closing.
+*/
 public class SetTankValveCommand extends CommandBase {
     private Timer timer;
     private final boolean val;
@@ -36,7 +38,7 @@ public class SetTankValveCommand extends CommandBase {
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return timer.get() >= waittime;
+        return timer.get() >= waittime || !pneumatics.getPressureSwitch();
     }
 
     // Called once after isFinished returns true
