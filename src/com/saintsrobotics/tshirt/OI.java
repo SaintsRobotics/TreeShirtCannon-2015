@@ -1,6 +1,6 @@
 package com.saintsrobotics.tshirt;
 
-import com.saintsrobotics.tshirt.commands.FireCannonCommand;
+import com.saintsrobotics.tshirt.commands.FiringCommandGroup;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
@@ -29,7 +29,7 @@ public class OI {
     public OI() {
         xbox = new Joystick(JOYSTICK_PORT);
         Button a = new JoystickButton(xbox, BUTTON_A);
-        a.whenPressed(new FireCannonCommand(relayWaitTime));
+        a.whenPressed(new FiringCommandGroup());
     }
     
     public double getAxis(int axis) {
