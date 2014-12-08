@@ -4,8 +4,14 @@ import com.saintsrobotics.tshirt.commands.CommandBase;
 
 /**
  * Sets a valve to a value and then delays.
+ * 
+ * <p>Note that the delay is increased by the time it takes for the valve to
+ * close, which is stored in {@code VALVE_DELAY}.
  */
 public class ValveCommand extends CommandBase {
+    
+    /** The delay for turning the valve on in milliseconds. */
+    public static final int VALVE_DELAY = 20;
     
     public static final int FIRING_VALVE = 0;
     public static final int TANK_VALVE = 1;
@@ -28,7 +34,7 @@ public class ValveCommand extends CommandBase {
      */
     public ValveCommand(int valve, boolean value, double time) {
         requires(pneumatics);
-        this.setTimeout(time/1000);
+        this.setTimeout(time/1000 + VALVE_DELAY);
         this.valve = valve;
         this.value = value;
     }

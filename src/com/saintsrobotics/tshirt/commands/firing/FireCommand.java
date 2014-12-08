@@ -3,7 +3,10 @@ package com.saintsrobotics.tshirt.commands.firing;
 import edu.wpi.first.wpilibj.command.CommandGroup;
 
 /**
- * Closes the tank valve, then opens and closes the firing valve to shoot once.
+ * Fires the cannon.
+ * 
+ * <p>Closes the tank valve, then opens and closes the firing valve to shoot
+ * once.</p>
  */
 public class FireCommand extends CommandGroup {
     
