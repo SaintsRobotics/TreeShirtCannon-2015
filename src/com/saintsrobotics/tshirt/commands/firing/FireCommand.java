@@ -8,8 +8,8 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 public class FireCommand extends CommandGroup {
     
     public FireCommand() {
-        addSequential(new ValveCommand(ValveCommand.TANK_VALVE, ValveCommand.CLOSED, 100));
+        addSequential(new ValveCommand(ValveCommand.TANK_VALVE, ValveCommand.CLOSED, 0));
         addSequential(new ValveCommand(ValveCommand.FIRING_VALVE, ValveCommand.OPEN, 500));
-        addSequential(new ValveCommand(ValveCommand.FIRING_VALVE, ValveCommand.CLOSED, 10));
+        addSequential(new ValveCommand(ValveCommand.FIRING_VALVE, ValveCommand.CLOSED, 0));
     }
 }
