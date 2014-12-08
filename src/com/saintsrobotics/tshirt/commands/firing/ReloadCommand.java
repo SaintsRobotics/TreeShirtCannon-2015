@@ -3,7 +3,10 @@ package com.saintsrobotics.tshirt.commands.firing;
 import edu.wpi.first.wpilibj.command.CommandGroup;
 
 /**
- * Opens the tank valve, waits, then closes the tank valve.
+ * Reloads the cannon.
+ * 
+ * <p>Closes the firing valve, opens the tank valve for a period of time, then
+ * closes the tank valve.</p>
  */
 public class ReloadCommand extends CommandGroup {
     
