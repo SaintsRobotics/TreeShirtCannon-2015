@@ -39,7 +39,7 @@ public class ValveCommand extends CommandBase {
                 pneumatics.setFiringValve(value);
                 break;
             case TANK_VALVE:
-                pneumatics.setFiringValve(value);
+                pneumatics.setTankValve(value);
                 break;
         }
     }
