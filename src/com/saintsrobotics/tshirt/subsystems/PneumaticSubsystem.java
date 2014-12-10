@@ -10,8 +10,21 @@ public class PneumaticSubsystem extends Subsystem {
     DigitalInput pressureSwitch = new DigitalInput(RobotMap.PRESSURE_SWITCH);
     Relay firingValve = new Relay(RobotMap.FIRING_RELAY, RobotMap.FIRING_DIRECTION);
     Relay tankValve = new Relay(RobotMap.TANK_RELAY, RobotMap.TANK_DIRECTION);
+    Relay compressorRelay = new Relay(RobotMap.COMPRESSOR_RELAY, RobotMap.COMPRESSOR_DIRECTION);
     
-    protected void initDefaultCommand() { }
+    protected void initDefaultCommand() {
+        new Thread(new Runnable() {
+            public void run() {
+                if (getPressureSwitch())
+                    compressorRelay.set(Relay.Value.kOff);
+                try {
+                    Thread.sleep(500);
+                } catch (InterruptedException e) {
+                    System.out.println("DAN PLS");
+                }
+            }
+        }).start();
+    }
 
     /**
      * Opens or closes the valve connected to the air tanks.

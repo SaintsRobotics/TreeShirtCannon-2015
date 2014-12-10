@@ -78,7 +78,7 @@ public class ValveCommand extends CommandBase {
      * @param time time to delay after setting valve, in milliseconds
      */
     public ValveCommand(Valve valve, ValvePosition valvePosition, double time) {
-        requires(pneumatics);
+        requires(pneumaticSubsystem);
         this.setTimeout(time/1000 + VALVE_DELAY);
         this.valve = valve;
         this.valvePosition = valvePosition;
@@ -86,9 +86,9 @@ public class ValveCommand extends CommandBase {
     
     protected void initialize() {
         if (valve == Valve.FIRING_VALVE)
-            pneumatics.setFiringValve(valvePosition.get());
+            pneumaticSubsystem.setFiringValve(valvePosition.get());
         else if (valve == Valve.TANK_VALVE)
-            pneumatics.setTankValve(valvePosition.get());
+            pneumaticSubsystem.setTankValve(valvePosition.get());
     }
     
     protected boolean isFinished() {
