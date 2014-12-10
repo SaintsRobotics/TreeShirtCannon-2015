@@ -20,7 +20,7 @@ public class ValveCommand extends CommandBase {
     public static final boolean CLOSED = false;
     
     private final int valve;
-    private final boolean value;
+    private final boolean position;
     
     /**
      * Creates a new {@code ValveCommand} with a specified duration, valve, and
@@ -28,24 +28,24 @@ public class ValveCommand extends CommandBase {
      * 
      * @param valve valve to set, either {@code ValveCommand.FIRING_VALVE} or
      * {@code ValveCommand.TANK_VALVE}
-     * @param value whether to open or close the valve, {@code ValveCommand.OPEN} or true to
-     * open, and {@code ValveCommand.CLOSED} or false to close.
+     * @param position whether to open or close the valve, {@code ValveCommand.OPEN} (true) to
+     * open, and {@code ValveCommand.CLOSED} (false) to close.
      * @param time time to delay after setting valve, in milliseconds
      */
-    public ValveCommand(int valve, boolean value, double time) {
+    public ValveCommand(int valve, boolean position, double time) {
         requires(pneumatics);
         this.setTimeout(time/1000 + VALVE_DELAY);
         this.valve = valve;
-        this.value = value;
+        this.position = position;
     }
     
     protected void initialize() {
         switch(valve) {
             case FIRING_VALVE:
-                pneumatics.setFiringValve(value);
+                pneumatics.setFiringValve(position);
                 break;
             case TANK_VALVE:
-                pneumatics.setTankValve(value);
+                pneumatics.setTankValve(position);
                 break;
         }
     }
