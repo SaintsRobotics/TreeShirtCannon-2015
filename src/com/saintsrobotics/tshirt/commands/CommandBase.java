@@ -14,12 +14,12 @@ public abstract class CommandBase extends Command {
 
     public static OI oi;
     public static DriveSubsystem driveSubsystem;
-    public static PneumaticSubsystem pneumatics;
+    public static PneumaticSubsystem pneumaticSubsystem;
     
     public static void init() {
         oi = new OI();
         driveSubsystem = new DriveSubsystem();
-        pneumatics = new PneumaticSubsystem();
+        pneumaticSubsystem = new PneumaticSubsystem();
     }
 
     public CommandBase(String name) {
