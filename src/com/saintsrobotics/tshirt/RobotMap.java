@@ -25,6 +25,8 @@ public class RobotMap {
     public static final Relay.Direction COMPRESSOR_DIRECTION = Relay.Direction.kForward;
     public static final boolean COMPRESSOR_INVERTED = false;
             
-    public static int MOTOR_LEFT = 1;
-    public static int MOTOR_RIGHT = 2;
+    public static int MOTOR_RIGHT_1 = 1;
+    public static int MOTOR_RIGHT_2 = 2;
+    public static int MOTOR_LEFT_1 = 3;
+    public static int MOTOR_LEFT_2 = 4;
 }
