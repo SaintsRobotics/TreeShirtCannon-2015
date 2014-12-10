@@ -1,5 +1,7 @@
 package com.saintsrobotics.tshirt.commands.firing;
 
+import com.saintsrobotics.tshirt.commands.firing.ValveCommand.Valve;
+import com.saintsrobotics.tshirt.commands.firing.ValveCommand.ValvePosition;
 import edu.wpi.first.wpilibj.command.CommandGroup;
 
 /**
@@ -11,8 +13,8 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 public class FireCommand extends CommandGroup {
     
     public FireCommand() {
-        addSequential(new ValveCommand(ValveCommand.TANK_VALVE, ValveCommand.CLOSED, 0));
-        addSequential(new ValveCommand(ValveCommand.FIRING_VALVE, ValveCommand.OPEN, 500));
-        addSequential(new ValveCommand(ValveCommand.FIRING_VALVE, ValveCommand.CLOSED, 0));
+        addSequential(new ValveCommand(Valve.TANK_VALVE, ValvePosition.CLOSED, 0));
+        addSequential(new ValveCommand(Valve.FIRING_VALVE, ValvePosition.OPEN, 500));
+        addSequential(new ValveCommand(Valve.FIRING_VALVE, ValvePosition.CLOSED, 0));
     }
 }

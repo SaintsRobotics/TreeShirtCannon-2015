@@ -10,17 +10,62 @@ import com.saintsrobotics.tshirt.commands.CommandBase;
  */
 public class ValveCommand extends CommandBase {
     
+    /**
+     * Represents the port a valve is connected to.
+     */
+    public static class Valve {
+        
+        /** The valve connecting the airlock and firing tube. */
+        public static final Valve FIRING_VALVE = new Valve(0);
+        
+        /** The valve connecting the tank to the firing valve. */
+        public static final Valve TANK_VALVE = new Valve(1);
+        
+        /** Raw integer value of the port. */
+        public final int port;
+        
+        /**
+         * Constructs a Valve with the specified port.
+         * 
+         * @param valve the port the valve is connected to.
+         */
+        private Valve(int valve) {
+            this.port = valve;
+        }
+    }
+    
+    /**
+     * Represents the position of the valve.
+     */
+    public static class ValvePosition {
+        
+        public static final ValvePosition OPEN = new ValvePosition(true);
+        public static final ValvePosition CLOSED = new ValvePosition(false);
+        
+        /** Raw boolean value of the position. */
+        public final boolean position;
+        
+        /** Gets the raw boolean value.
+         * 
+         * @return true for open and false for closed.
+         */
+        public boolean get() { return position; }
+        
+        /**
+         * Represents the position of a valve..
+         * 
+         * @param position true for open and false for closed
+         */
+        public ValvePosition(boolean position) {
+            this.position = position;
+        }
+    }
+    
     /** The delay for turning the valve on in milliseconds. */
     public static final int VALVE_DELAY = 20;
     
-    public static final int FIRING_VALVE = 0;
-    public static final int TANK_VALVE = 1;
-    
-    public static final boolean OPEN = true;
-    public static final boolean CLOSED = false;
-    
-    private final int valve;
-    private final boolean position;
+    private final Valve valve;
+    private final ValvePosition valvePosition;
     
     /**
      * Creates a new {@code ValveCommand} with a specified duration, valve, and
@@ -28,26 +73,22 @@ public class ValveCommand extends CommandBase {
      * 
      * @param valve valve to set, either {@code ValveCommand.FIRING_VALVE} or
      * {@code ValveCommand.TANK_VALVE}
-     * @param position whether to open or close the valve, {@code ValveCommand.OPEN} (true) to
-     * open, and {@code ValveCommand.CLOSED} (false) to close.
+     * @param valvePosition whether to open or close the valve, {@code ValveCommand.OPEN} or true to
+     * open, and {@code ValveCommand.CLOSED} or false to close.
      * @param time time to delay after setting valve, in milliseconds
      */
-    public ValveCommand(int valve, boolean position, double time) {
+    public ValveCommand(Valve valve, ValvePosition valvePosition, double time) {
         requires(pneumatics);
         this.setTimeout(time/1000 + VALVE_DELAY);
         this.valve = valve;
-        this.position = position;
+        this.valvePosition = valvePosition;
     }
     
     protected void initialize() {
-        switch(valve) {
-            case FIRING_VALVE:
-                pneumatics.setFiringValve(position);
-                break;
-            case TANK_VALVE:
-                pneumatics.setTankValve(position);
-                break;
-        }
+        if (valve == Valve.FIRING_VALVE)
+            pneumatics.setFiringValve(valvePosition.get());
+        else if (valve == Valve.TANK_VALVE)
+            pneumatics.setTankValve(valvePosition.get());
     }
     
     protected boolean isFinished() {
