@@ -9,15 +9,19 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 
 public class DriveSubsystem extends Subsystem {
     
-    SpeedController left = new Talon(RobotMap.MOTOR_LEFT);
-    SpeedController right = new Talon(RobotMap.MOTOR_RIGHT);
+    SpeedController right1 = new Talon(RobotMap.MOTOR_RIGHT_1);
+    SpeedController right2 = new Talon(RobotMap.MOTOR_RIGHT_2);
+    SpeedController left1 = new Talon(RobotMap.MOTOR_LEFT_1);
+    SpeedController left2 = new Talon(RobotMap.MOTOR_LEFT_2);
     
     public void initDefaultCommand() {
         setDefaultCommand(new DriveCommand());
     }
     
     public void setTankDrive(double l, double r) {
-        left.set(l);
-        right.set(r);
+        right1.set(r);
+        right2.set(r);
+        left1.set(l);
+        left2.set(l);
     }
 }
