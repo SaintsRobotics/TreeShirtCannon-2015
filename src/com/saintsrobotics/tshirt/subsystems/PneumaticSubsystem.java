@@ -38,8 +38,8 @@ public class PneumaticSubsystem extends Subsystem {
      * (or backwards in bidirectional mode).
      */
     public boolean getTankValve() {
-        return firingValve.get().equals(Relay.Value.kOn)||
-               firingValve.get().equals(Relay.Value.kForward);
+        return tankValve.get().equals(Relay.Value.kOn)||
+               tankValve.get().equals(Relay.Value.kForward);
     }
     
     /**
