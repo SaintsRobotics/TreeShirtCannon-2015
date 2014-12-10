@@ -1,6 +1,7 @@
 package com.saintsrobotics.tshirt.commands;
 
 import com.saintsrobotics.tshirt.OI;
+import com.saintsrobotics.tshirt.subsystems.CompressorSubsystem;
 import com.saintsrobotics.tshirt.subsystems.DriveSubsystem;
 import com.saintsrobotics.tshirt.subsystems.PneumaticSubsystem;
 import edu.wpi.first.wpilibj.command.Command;
@@ -15,11 +16,13 @@ public abstract class CommandBase extends Command {
     public static OI oi;
     public static DriveSubsystem driveSubsystem;
     public static PneumaticSubsystem pneumaticSubsystem;
+    public static CompressorSubsystem compressorSubsystem;
     
     public static void init() {
         oi = new OI();
         driveSubsystem = new DriveSubsystem();
         pneumaticSubsystem = new PneumaticSubsystem();
+        compressorSubsystem = new CompressorSubsystem();
     }
 
     public CommandBase(String name) {
