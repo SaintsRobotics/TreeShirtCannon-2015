@@ -13,22 +13,32 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
  */
 public class OI {
     
+    private static final int JOYSTICK_PORT = 1;
+    
     public static final int LEFT_X = 1;
     public static final int LEFT_Y = 2;
     public static final int TRIGGERS = 3;
     public static final int RIGHT_X = 4;
     public static final int RIGHT_Y = 5;
     
-    private static final int JOYSTICK_PORT = 1;
-    private static final int BUTTON_A = 2;
+    public static final int BUTTON_A = 1;
+    public static final int BUTTON_B = 2;
+    public static final int BUTTON_X = 3;
+    public static final int BUTTON_Y = 4;
+    public static final int BUTTON_LB = 5;
+    public static final int BUTTON_RB = 6;
+    public static final int BUTTON_BACK = 7;
+    public static final int BUTTON_START = 8;
+    public static final int BUTTON_L3 = 9;
+    public static final int BUTTON_R3 = 10;
     
     private final Joystick xbox;
     
     public OI() {
         xbox = new Joystick(JOYSTICK_PORT);
         Button a = new JoystickButton(xbox, BUTTON_A);
-        Button b = new JoystickButton(xbox, BUTTON_A);
-        Button x = new JoystickButton(xbox, BUTTON_A);
+        Button b = new JoystickButton(xbox, BUTTON_B);
+        Button x = new JoystickButton(xbox, BUTTON_X);
         a.whenPressed(new FireAndReloadCommand());
         b.whenPressed(new FireCommand());
         x.whenPressed(new ReloadCommand());

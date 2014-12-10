@@ -20,4 +20,7 @@ public class RobotMap {
     public static final int TANK_RELAY = 2;
     public static final Relay.Direction TANK_DIRECTION = Relay.Direction.kForward;
     public static final boolean TANK_INVERTED = false;
+    
+    public static int MOTOR_LEFT = 1;
+    public static int MOTOR_RIGHT = 2;
 }
