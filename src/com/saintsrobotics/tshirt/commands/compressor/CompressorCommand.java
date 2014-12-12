@@ -10,7 +10,7 @@ public class CompressorCommand extends CommandBase {
 
     protected void execute() {
         if(compressorSubsystem.getPressureSwitch()) {  //If Pressure is less than 115 psi
-                compressorSubsystem.setCompressor(true);   //Turn on compressor
+                compressorSubsystem.setCompressor(true);  //Turn on compressor
         }
         
         else {
