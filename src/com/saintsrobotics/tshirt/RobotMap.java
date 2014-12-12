@@ -10,6 +10,8 @@ import edu.wpi.first.wpilibj.Relay;
  */
 public class RobotMap {
     
+    public static final boolean PNEUMATICS = true;
+    
     public static final int PRESSURE_SWITCH = 1;
     public static final boolean PRESSURE_SWITCH_INVERTED = false;
     
