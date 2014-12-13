@@ -10,20 +10,20 @@ import edu.wpi.first.wpilibj.Relay;
  */
 public class RobotMap {
     
-    public static final boolean PNEUMATICS = true;
+    public static final boolean PNEUMATICS = false;
     
     public static final int PRESSURE_SWITCH = 1;
     public static final boolean PRESSURE_SWITCH_INVERTED = false;
     
-    public static final int FIRING_RELAY = 2;
+    public static final int FIRING_RELAY = 3;
     public static final Relay.Direction FIRING_DIRECTION = Relay.Direction.kForward;
-    public static final boolean FIRING_INVERTED = false;
+    public static final boolean FIRING_INVERTED = true;
     
-    public static final int TANK_RELAY = 3;
+    public static final int TANK_RELAY = 2;
     public static final Relay.Direction TANK_DIRECTION = Relay.Direction.kForward;
-    public static final boolean TANK_INVERTED = false;
+    public static final boolean TANK_INVERTED = true;
     
-    public static final int COMPRESSOR_RELAY = 4;
+    public static final int COMPRESSOR_RELAY = 8;
     public static final Relay.Direction COMPRESSOR_DIRECTION = Relay.Direction.kForward;
     public static final boolean COMPRESSOR_INVERTED = false;
             

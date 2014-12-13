@@ -19,9 +19,9 @@ public class DriveSubsystem extends Subsystem {
     }
     
     public void setTankDrive(double l, double r) {
+        left1.set(-l);
+        left2.set(-l);
         right1.set(r);
         right2.set(r);
-        left1.set(l);
-        left2.set(l);
     }
 }

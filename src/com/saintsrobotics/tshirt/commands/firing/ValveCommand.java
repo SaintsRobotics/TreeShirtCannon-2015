@@ -74,7 +74,7 @@ public class ValveCommand extends CommandBase {
      * @param valve valve to set, either {@code ValveCommand.FIRING_VALVE} or
      * {@code ValveCommand.TANK_VALVE}
      * @param valvePosition whether to open or close the valve, {@code ValveCommand.OPEN} or true to
-     * open, and {@code ValveCommand.CLOSED} or false to close.
+     * open, and {@code ValveCommand.CLOSED} or false to close
      * @param time time to delay after setting valve, in milliseconds
      */
     public ValveCommand(Valve valve, ValvePosition valvePosition, double time) {
