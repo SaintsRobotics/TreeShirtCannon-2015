@@ -36,14 +36,12 @@ public class OI {
     
     public OI() {
         xbox = new Joystick(JOYSTICK_PORT);
-        if (RobotMap.PNEUMATICS) {
-            Button a = new JoystickButton(xbox, BUTTON_A);
-            Button b = new JoystickButton(xbox, BUTTON_B);
-            Button x = new JoystickButton(xbox, BUTTON_X);
-            a.whenPressed(new FireAndReloadCommand());
-            b.whenPressed(new FireCommand());
-            x.whenPressed(new ReloadCommand());
-        }
+        Button a = new JoystickButton(xbox, BUTTON_A);
+        Button b = new JoystickButton(xbox, BUTTON_B);
+        Button x = new JoystickButton(xbox, BUTTON_X);
+        a.whenPressed(new FireAndReloadCommand());
+        b.whenPressed(new FireCommand());
+        x.whenPressed(new ReloadCommand());
     }
     
     public double getAxis(int axis) {

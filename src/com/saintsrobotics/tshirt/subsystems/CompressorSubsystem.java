@@ -13,8 +13,9 @@ public class CompressorSubsystem extends Subsystem {
     Relay compressorRelay = new Relay(RobotMap.COMPRESSOR_RELAY, RobotMap.COMPRESSOR_DIRECTION);
 
     protected void initDefaultCommand() {
-        if (RobotMap.PNEUMATICS)
-            setDefaultCommand(new CompressorCommand());
+        CompressorCommand command = new CompressorCommand();
+        command.start();
+        setDefaultCommand(command);
     }
     
     /**

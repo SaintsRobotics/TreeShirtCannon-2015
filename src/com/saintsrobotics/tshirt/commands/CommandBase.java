@@ -19,10 +19,10 @@ public abstract class CommandBase extends Command {
     public static CompressorSubsystem compressorSubsystem;
     
     public static void init() {
-        oi = new OI();
         driveSubsystem = new DriveSubsystem();
         pneumaticSubsystem = new PneumaticSubsystem();
         compressorSubsystem = new CompressorSubsystem();
+        oi = new OI();
     }
 
     public CommandBase(String name) {

@@ -2,13 +2,13 @@ package com.saintsrobotics.tshirt.subsystems;
 
 import com.saintsrobotics.tshirt.RobotMap;
 import com.saintsrobotics.tshirt.util.MathHelper;
-import edu.wpi.first.wpilibj.Relay;
+import edu.wpi.first.wpilibj.DigitalOutput;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 public class PneumaticSubsystem extends Subsystem {
     
-    Relay firingValve = new Relay(RobotMap.FIRING_RELAY, RobotMap.FIRING_DIRECTION);
-    Relay tankValve = new Relay(RobotMap.TANK_RELAY, RobotMap.TANK_DIRECTION);
+    DigitalOutput firingValve = new DigitalOutput(RobotMap.FIRING_RELAY);
+    DigitalOutput tankValve = new DigitalOutput(RobotMap.TANK_RELAY);
     
     protected void initDefaultCommand() { }
 
@@ -18,7 +18,7 @@ public class PneumaticSubsystem extends Subsystem {
      * @param val true for open, false for closed
      */
     public void setTankValve(boolean val) {
-        tankValve.set(MathHelper.invert(val, RobotMap.TANK_INVERTED) ? Relay.Value.kOn : Relay.Value.kOff);
+        tankValve.set(MathHelper.invert(val, RobotMap.TANK_INVERTED));
     }
     
     /**
@@ -27,28 +27,6 @@ public class PneumaticSubsystem extends Subsystem {
      * @param val true for open, false for closed
      */
     public void setFiringValve(boolean val) {
-        firingValve.set(MathHelper.invert(val, RobotMap.FIRING_INVERTED) ? Relay.Value.kOn : Relay.Value.kOff);
-    }
-    
-    /**
-     * Gets the current setting of the tank valve.
-     * 
-     * @return true if on (or forward in bidirectional mode), false if off
-     * (or backwards in bidirectional mode).
-     */
-    public boolean getTankValve() {
-        return tankValve.get().equals(Relay.Value.kOn)||
-               tankValve.get().equals(Relay.Value.kForward);
-    }
-    
-    /**
-     * Gets the current setting of the firing valve.
-     * 
-     * @return true if on (or forward in bidirectional mode), false if off
-     * (or backwards in bidirectional mode).
-     */
-    public boolean getFiringValve() {
-        return firingValve.get().equals(Relay.Value.kOn) ||
-               firingValve.get().equals(Relay.Value.kForward);
+        firingValve.set(MathHelper.invert(val, RobotMap.FIRING_INVERTED));
     }
 }
