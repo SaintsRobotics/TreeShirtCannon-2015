@@ -5,16 +5,19 @@ import com.saintsrobotics.tshirt.RobotMap;
 import com.saintsrobotics.tshirt.commands.CommandBase;
 
 public class CompressorCommand extends CommandBase {
-
-    protected void initialize() {
+    
+    public CompressorCommand() {
         requires(compressorSubsystem);
+    }
+    
+    protected void initialize() {
     }
 
     protected void execute() {
         if (RobotMap.MANUAL_COMPRESSOR)
-            compressorSubsystem.setCompressor(oi.getAxis(OI.TRIGGERS) > 0.5);
+            compressorSubsystem.setCompressor((oi.getAxis(OI.TRIGGERS) > 0.5)); // left trigger
         else
-            compressorSubsystem.setCompressor(compressorSubsystem.getPressureSwitch());
+            compressorSubsystem.setCompressor(!compressorSubsystem.getPressureSwitch());
     }
 
     protected boolean isFinished() {

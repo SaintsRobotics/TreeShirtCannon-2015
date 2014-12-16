@@ -15,9 +15,7 @@ public class DriveSubsystem extends Subsystem {
     SpeedController left2 = new Talon(RobotMap.MOTOR_LEFT_2);
     
     public void initDefaultCommand() {
-        DriveCommand command = new DriveCommand();
-        command.start();
-        setDefaultCommand(command);
+        setDefaultCommand(new DriveCommand());
     }
     
     public void setTankDrive(double l, double r) {

@@ -3,12 +3,12 @@ package com.saintsrobotics.tshirt.commands.firing;
 import edu.wpi.first.wpilibj.command.CommandGroup;
 
 /**
- * Fires, then reloads.
+ * Reloads, then fires.
  */
-public class FireAndReloadCommand extends CommandGroup {
+public class ReloadAndFireCommand extends CommandGroup {
     
-    public FireAndReloadCommand() {
-        addSequential(new FireCommand());
+    public ReloadAndFireCommand() {
         addSequential(new ReloadCommand());
+        addSequential(new FireCommand());
     }
 }

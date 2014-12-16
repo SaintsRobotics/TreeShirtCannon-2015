@@ -79,23 +79,31 @@ public class ValveCommand extends CommandBase {
      */
     public ValveCommand(Valve valve, ValvePosition valvePosition, double time) {
         requires(pneumaticSubsystem);
-        this.setTimeout(time/1000 + VALVE_DELAY);
+        this.setTimeout((time+VALVE_DELAY)/1000);
         this.valve = valve;
         this.valvePosition = valvePosition;
     }
     
     protected void initialize() {
+        System.out.println("Setting Tank: " + valve.port + " " + valvePosition.position);
+    }
+    
+    protected boolean isFinished() {
+        if (isTimedOut()) {
+            System.out.println("Timed out");
+            return true;
+        }
+        return false;
+    }
+    
+    protected void execute() {
         if (valve == Valve.FIRING_VALVE)
             pneumaticSubsystem.setFiringValve(valvePosition.get());
         else if (valve == Valve.TANK_VALVE)
             pneumaticSubsystem.setTankValve(valvePosition.get());
+        else
+            System.out.println("small porblem");
     }
-    
-    protected boolean isFinished() {
-        return isTimedOut();
-    }
-    
-    protected void execute() { }
     protected void end() { }
     protected void interrupted() { }
 }
