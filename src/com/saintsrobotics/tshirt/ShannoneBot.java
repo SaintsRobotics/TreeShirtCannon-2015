@@ -6,7 +6,7 @@ import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
-public class SwagCannonBot extends IterativeRobot {
+public class ShannoneBot extends IterativeRobot {
 
     public void robotInit() {
         CommandBase.init(); // Initialize all subsystems
