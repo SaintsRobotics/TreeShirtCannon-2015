@@ -16,10 +16,10 @@ public class RobotMap {
     public static final int FIRING_RELAY = 2; // Digital I/O
     public static final int TANK_RELAY = 3; // Digital I/O
 
-    public static final int COMPRESSOR_RELAY = 7; // Relay
+    public static final int COMPRESSOR_RELAY = 3; // Relay
     public static final Relay.Direction COMPRESSOR_DIRECTION = Relay.Direction.kForward;
     
-    public static final int RELOAD_TIME = 5000;
+    public static final int RELOAD_TIME = 6000;
     public static final int FIRE_TIME = 1000;
     
     public static int MOTOR_RIGHT_1 = 1;

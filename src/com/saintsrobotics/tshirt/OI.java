@@ -1,8 +1,7 @@
 package com.saintsrobotics.tshirt;
 
-import com.saintsrobotics.tshirt.commands.TestCommand;
-import com.saintsrobotics.tshirt.commands.firing.ReloadAndFireCommand;
 import com.saintsrobotics.tshirt.commands.firing.FireCommand;
+import com.saintsrobotics.tshirt.commands.firing.ReloadAndFireCommand;
 import com.saintsrobotics.tshirt.commands.firing.ReloadCommand;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
@@ -39,12 +38,10 @@ public class OI {
         xbox = new Joystick(JOYSTICK_PORT);
         Button a = new JoystickButton(xbox, BUTTON_A);
         Button b = new JoystickButton(xbox, BUTTON_B);
-        Button x = new JoystickButton(xbox, BUTTON_X);
         Button y = new JoystickButton(xbox, BUTTON_Y);
-        a.whenPressed(new ReloadAndFireCommand());
-        b.whenPressed(new FireCommand());
-        x.whenPressed(new ReloadCommand());
-        y.whenPressed(new TestCommand());
+        a.whenPressed(new FireCommand());
+        b.whenPressed(new ReloadCommand());
+        y.whenPressed(new ReloadAndFireCommand());
     }
     
     public double getAxis(int axis) {
