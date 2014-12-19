@@ -13,7 +13,7 @@ public class DriveCommand extends CommandBase {
     }
 
     protected void execute() {
-        driveSubsystem.setTankDrive(oi.getAxis(OI.LEFT_Y), oi.getAxis(OI.RIGHT_Y));
+        driveSubsystem.setArcadeDrive(oi.getAxis(OI.LEFT_Y), oi.getAxis(OI.RIGHT_Y));
     }
 
     protected boolean isFinished() {

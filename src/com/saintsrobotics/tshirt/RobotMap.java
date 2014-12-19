@@ -22,8 +22,8 @@ public class RobotMap {
     public static final int RELOAD_TIME = 6000;
     public static final int FIRE_TIME = 1000;
     
-    public static int MOTOR_RIGHT_1 = 1;
-    public static int MOTOR_RIGHT_2 = 2;
-    public static int MOTOR_LEFT_1 = 3;
-    public static int MOTOR_LEFT_2 = 4;
+    public static final int MOTOR_RIGHT_1 = 1;
+    public static final int MOTOR_RIGHT_2 = 2;
+    public static final int MOTOR_LEFT_1 = 3;
+    public static final int MOTOR_LEFT_2 = 4;
 }

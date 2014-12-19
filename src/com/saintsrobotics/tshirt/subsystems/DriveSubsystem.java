@@ -24,4 +24,8 @@ public class DriveSubsystem extends Subsystem {
         right1.set(r);
         right2.set(r);
     }
+    
+    public void setArcadeDrive(double drive, double turn) {
+        setTankDrive(drive+turn, drive-turn);
+    }
 }
