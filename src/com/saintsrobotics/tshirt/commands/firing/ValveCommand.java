@@ -102,7 +102,7 @@ public class ValveCommand extends CommandBase {
         else if (valve == Valve.TANK_VALVE)
             pneumaticSubsystem.setTankValve(valvePosition.get());
         else
-            System.out.println("small porblem");
+            System.out.println("small problem");
     }
     protected void end() { }
     protected void interrupted() { }
