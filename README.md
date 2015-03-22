@@ -1,4 +1,4 @@
-TShirtCannon
+Tree Shirt Cannon - 2015
 ============
 
-Code for the T-Shirt cannon we're building.
+Code for our Tree Shirt Cannon, a 2015 offseason project.
