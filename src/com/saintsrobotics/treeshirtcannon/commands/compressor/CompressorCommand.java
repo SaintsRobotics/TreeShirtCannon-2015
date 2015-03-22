@@ -1,22 +1,20 @@
 package com.saintsrobotics.treeshirtcannon.commands.compressor;
 
-import com.saintsrobotics.treeshirtcannon.OI;
 import com.saintsrobotics.treeshirtcannon.commands.CommandBase;
+import com.saintsrobotics.treeshirtcannon.OI;
+import com.saintsrobotics.treeshirtcannon.Robot;
 
 public class CompressorCommand extends CommandBase {
     
     public CompressorCommand() {
-        requires(compressorSubsystem);
+        requires(Robot.compressor);
     }
     
-    protected void initialize() {
-    }
-
     protected void execute() {
-        if (oi.getAxis(OI.TRIGGERS) > 0.5)
-            compressorSubsystem.setCompressor(false); // left trigger
+        if (Robot.oi.getAxis(OI.TRIGGERS) > 0.5)
+            Robot.compressor.setCompressor(false); // left trigger
         else
-            compressorSubsystem.setCompressor(!compressorSubsystem.getPressureSwitch());
+            Robot.compressor.setCompressor(!Robot.compressor.getPressureSwitch());
     }
 
     protected boolean isFinished() {

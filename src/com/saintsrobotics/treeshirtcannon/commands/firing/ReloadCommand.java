@@ -8,8 +8,8 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 /**
  * Reloads the cannon.
  * 
- * <p>Closes the firing valve, opens the tank valve for a period of time, then
- * closes the tank valve.</p>
+ * Closes the firing valve, opens the tank valve for a period of time, then
+ * closes the tank valve.
  */
 public class ReloadCommand extends CommandGroup {
     

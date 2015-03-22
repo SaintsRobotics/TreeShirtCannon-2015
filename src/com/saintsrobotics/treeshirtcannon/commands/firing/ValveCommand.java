@@ -1,5 +1,6 @@
 package com.saintsrobotics.treeshirtcannon.commands.firing;
 
+import com.saintsrobotics.treeshirtcannon.Robot;
 import com.saintsrobotics.treeshirtcannon.commands.CommandBase;
 
 /**
@@ -78,7 +79,7 @@ public class ValveCommand extends CommandBase {
      * @param time time to delay after setting valve, in milliseconds
      */
     public ValveCommand(Valve valve, ValvePosition valvePosition, double time) {
-        requires(pneumaticSubsystem);
+        requires(Robot.pneumatics);
         this.setTimeout((time+VALVE_DELAY)/1000);
         this.valve = valve;
         this.valvePosition = valvePosition;
@@ -98,12 +99,10 @@ public class ValveCommand extends CommandBase {
     
     protected void execute() {
         if (valve == Valve.FIRING_VALVE)
-            pneumaticSubsystem.setFiringValve(valvePosition.get());
+            Robot.pneumatics.setFiringValve(valvePosition.get());
         else if (valve == Valve.TANK_VALVE)
-            pneumaticSubsystem.setTankValve(valvePosition.get());
+            Robot.pneumatics.setTankValve(valvePosition.get());
         else
             System.out.println("small problem");
     }
-    protected void end() { }
-    protected void interrupted() { }
 }
