@@ -1,6 +1,6 @@
-MIDlet-Name: SwagCannon
+MIDlet-Name: TreeShirtCannon
 MIDlet-Version: 1.0.0
 MIDlet-Vendor: FIRST
-MIDlet-1: ShannoneBot, , com.saintsrobotics.tshirt.ShannoneBot
+MIDlet-1: Robot, , com.saintsrobotics.treeshirtcannon.Robot
 MicroEdition-Profile: IMP-1.0
 MicroEdition-Configuration: CLDC-1.1

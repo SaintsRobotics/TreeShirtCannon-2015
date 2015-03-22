@@ -1,7 +1,7 @@
-package com.saintsrobotics.tshirt;
+package com.saintsrobotics.treeshirtcannon;
 
-import com.saintsrobotics.tshirt.commands.firing.FireCommand;
-import com.saintsrobotics.tshirt.commands.firing.ReloadCommand;
+import com.saintsrobotics.treeshirtcannon.commands.firing.FireCommand;
+import com.saintsrobotics.treeshirtcannon.commands.firing.ReloadCommand;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;

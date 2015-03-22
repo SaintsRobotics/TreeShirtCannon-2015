@@ -1,6 +1,6 @@
-package com.saintsrobotics.tshirt.commands;
+package com.saintsrobotics.treeshirtcannon.commands;
 
-import com.saintsrobotics.tshirt.commands.firing.ValveCommand;
+import com.saintsrobotics.treeshirtcannon.commands.firing.ValveCommand;
 import edu.wpi.first.wpilibj.command.CommandGroup;
 
 /**

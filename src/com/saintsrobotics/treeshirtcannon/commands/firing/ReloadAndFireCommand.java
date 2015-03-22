@@ -1,4 +1,4 @@
-package com.saintsrobotics.tshirt.commands.firing;
+package com.saintsrobotics.treeshirtcannon.commands.firing;
 
 import edu.wpi.first.wpilibj.command.CommandGroup;
 

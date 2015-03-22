@@ -1,7 +1,7 @@
-package com.saintsrobotics.tshirt.subsystems;
+package com.saintsrobotics.treeshirtcannon.subsystems;
 
-import com.saintsrobotics.tshirt.RobotMap;
-import com.saintsrobotics.tshirt.commands.compressor.CompressorCommand;
+import com.saintsrobotics.treeshirtcannon.RobotMap;
+import com.saintsrobotics.treeshirtcannon.commands.compressor.CompressorCommand;
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.Relay;
 import edu.wpi.first.wpilibj.command.Subsystem;

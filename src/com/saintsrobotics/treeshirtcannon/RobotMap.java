@@ -1,4 +1,4 @@
-package com.saintsrobotics.tshirt;
+package com.saintsrobotics.treeshirtcannon;
 
 import edu.wpi.first.wpilibj.Relay;
 

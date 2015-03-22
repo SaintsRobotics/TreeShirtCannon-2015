@@ -1,9 +1,9 @@
-package com.saintsrobotics.tshirt.commands;
+package com.saintsrobotics.treeshirtcannon.commands;
 
-import com.saintsrobotics.tshirt.OI;
-import com.saintsrobotics.tshirt.subsystems.CompressorSubsystem;
-import com.saintsrobotics.tshirt.subsystems.DriveSubsystem;
-import com.saintsrobotics.tshirt.subsystems.PneumaticSubsystem;
+import com.saintsrobotics.treeshirtcannon.OI;
+import com.saintsrobotics.treeshirtcannon.subsystems.CompressorSubsystem;
+import com.saintsrobotics.treeshirtcannon.subsystems.DriveSubsystem;
+import com.saintsrobotics.treeshirtcannon.subsystems.PneumaticSubsystem;
 import edu.wpi.first.wpilibj.command.Command;
 
 /**

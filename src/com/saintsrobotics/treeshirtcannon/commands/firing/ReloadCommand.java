@@ -1,8 +1,8 @@
-package com.saintsrobotics.tshirt.commands.firing;
+package com.saintsrobotics.treeshirtcannon.commands.firing;
 
-import com.saintsrobotics.tshirt.RobotMap;
-import com.saintsrobotics.tshirt.commands.firing.ValveCommand.Valve;
-import com.saintsrobotics.tshirt.commands.firing.ValveCommand.ValvePosition;
+import com.saintsrobotics.treeshirtcannon.RobotMap;
+import com.saintsrobotics.treeshirtcannon.commands.firing.ValveCommand.Valve;
+import com.saintsrobotics.treeshirtcannon.commands.firing.ValveCommand.ValvePosition;
 import edu.wpi.first.wpilibj.command.CommandGroup;
 
 /**

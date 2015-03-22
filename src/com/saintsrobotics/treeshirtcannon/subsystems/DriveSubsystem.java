@@ -1,7 +1,7 @@
-package com.saintsrobotics.tshirt.subsystems;
+package com.saintsrobotics.treeshirtcannon.subsystems;
 
-import com.saintsrobotics.tshirt.RobotMap;
-import com.saintsrobotics.tshirt.commands.drive.DriveCommand;
+import com.saintsrobotics.treeshirtcannon.RobotMap;
+import com.saintsrobotics.treeshirtcannon.commands.drive.DriveCommand;
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Subsystem;

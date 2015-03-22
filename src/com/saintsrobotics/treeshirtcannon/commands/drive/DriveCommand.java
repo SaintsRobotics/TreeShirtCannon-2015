@@ -1,7 +1,7 @@
-package com.saintsrobotics.tshirt.commands.drive;
+package com.saintsrobotics.treeshirtcannon.commands.drive;
 
-import com.saintsrobotics.tshirt.OI;
-import com.saintsrobotics.tshirt.commands.CommandBase;
+import com.saintsrobotics.treeshirtcannon.OI;
+import com.saintsrobotics.treeshirtcannon.commands.CommandBase;
 
 public class DriveCommand extends CommandBase {
 

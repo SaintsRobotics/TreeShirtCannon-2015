@@ -1,12 +1,11 @@
-package com.saintsrobotics.tshirt;
+package com.saintsrobotics.treeshirtcannon;
 
-
-import com.saintsrobotics.tshirt.commands.CommandBase;
+import com.saintsrobotics.treeshirtcannon.commands.CommandBase;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
-public class ShannoneBot extends IterativeRobot {
+public class Robot extends IterativeRobot {
 
     public void robotInit() {
         CommandBase.init(); // Initialize all subsystems
